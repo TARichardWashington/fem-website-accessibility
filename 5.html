@@ -53,13 +53,14 @@
 
     <script>
         let body = document.querySelector("body");
-        let dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let classes = body.classList;
 
         function toggleDarkMode() {  
-            if (dark) {
-                body.classList.toggle("light");
+            if (systemDarkMode) {
+                classes.toggle("light");
             } else {
-                body.classList.toggle("dark");
+                classes.toggle("dark");
             }            
         }
     </script>
