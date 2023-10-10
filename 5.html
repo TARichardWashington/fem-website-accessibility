@@ -54,8 +54,9 @@
     <script>
         function toggleDarkMode() {
             let body = document.querySelector("body");
+            let dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
             
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            if (dark) {
                 body.classList.toggle("light");
             } else {
                 body.classList.toggle("dark");
