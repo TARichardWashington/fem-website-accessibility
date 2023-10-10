@@ -47,7 +47,7 @@
       </p>
       <label>
         Enable Dark Mode
-        <input id="input" type="checkbox" onclick="toggleDarkMode()"/>
+        <input id="input" type="checkbox" onclick="toggleBodyDarkMode()"/>
       </label>
     </div>
 
@@ -56,7 +56,7 @@
         let systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         let classes = body.classList;
 
-        function toggleDarkMode() {  
+        function toggleBodyDarkMode() {  
             if (systemDarkMode) {
                 classes.toggle("light");
             } else {
