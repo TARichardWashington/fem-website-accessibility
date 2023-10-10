@@ -14,11 +14,21 @@
 	        }
         }
 
-@media(prefers-color-scheme: light) {
-	    .main {
-		    background-color: white;
-            color: black;
+        @media(prefers-color-scheme: light) {
+	        .main {
+		        background-color: white;
+                color: black;
 	        }
+        }
+
+        .main.light {
+            background-color: white;
+            color: black;
+        }
+
+        .main.dark {
+            background-color: black;
+                color: white;
         }
     </style>
   </head>
@@ -37,8 +47,20 @@
       </p>
       <label>
         Enable Dark Mode
-        <input id="input" type="checkbox" />
+        <input id="input" type="checkbox" onclick="toggleDarkMode()"/>
       </label>
     </div>
+
+    <script>
+        function toggleDarkMode() {
+            let body = document.querySelector("body");
+            
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                body.classList.toggle("light");
+            } else {
+                body.classList.toggle("dark");
+            }            
+        }
+    </script>
   </body>
 </html>
