@@ -52,9 +52,10 @@
     </div>
 
     <script>
-        function toggleDarkMode() {
-            let body = document.querySelector("body");
-            let dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let body = document.querySelector("body");
+        let dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        function toggleDarkMode() {           
             
             if (dark) {
                 body.classList.toggle("light");
